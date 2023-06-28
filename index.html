@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class='use-all-space'>
+<head>
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+    <meta charset='UTF-8'>
+    <title>Maps SDK for Web - Vector map</title>
+    <meta name='viewport'
+          content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps.css'>
+    <link rel='stylesheet' type='text/css' href='index.css'/>
+</head>
+<body>
+
+    <div id='map' class='map'></div>
+
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js'></script>
+    <script type='text/javascript' src='mobile-or-tablet.js'></script>
+    <script>
+        var renderMap = (lg, lt)=>{
+            var latlong = new tt.LngLat(lg, lt);
+            var map = tt.map({
+                key: 'PGoU54kuG7mGC31MVAf6gG2m9iNT1B1C',
+                container: 'map',
+                dragPan: !isMobileOrTablet(),
+                center: latlong,
+                zoom: 18
+            });
+            map.addControl(new tt.FullscreenControl());
+            map.addControl(new tt.NavigationControl());
+        }
+
+        //captura latitude e longitude do usuário
+        //e renderiza o mapa
+        var long = 0;
+        var lat = 0;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((posic)=>{
+                long = posic.coords.longitude;
+                lat = posic.coords.latitude;
+                renderMap(long, lat);
+            });
+        }
+        
+        
+    </script>
+</body>
+</html>
