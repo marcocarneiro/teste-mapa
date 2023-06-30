@@ -4,4 +4,4 @@ https://developer.tomtom.com/
 
 Apenas JS
 
-Para testar deve-se copiar os arquivos para uma pasta de um servidor como o XAMPP
+Para testar, deve-se copiar os arquivos para uma pasta de um servidor como o XAMPP
