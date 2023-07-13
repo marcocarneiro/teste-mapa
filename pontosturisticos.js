@@ -15,18 +15,15 @@ campoBusca.addEventListener('submit', function(event){
     let name = document.getElementById('textbox').value;
     apiGet('geoname', 'name=' + name).then(function (data) {
         if (data.status == "OK") {
-            //Renderiza mapa com o local digitado
-            lg = data.lon;
-            lt = data.lat;
-            renderMap = (lg, lt)
+            lat = data.lon;
+            lon = data.lat;            
             //
-            
             console.log(data)
-        } 
-        
+        }        
         //document.getElementById("info").innerHTML = `<p>${message}</p>`;
     });
     event.preventDefault();
+    renderMap = (lon, lat)
 });
 
 
