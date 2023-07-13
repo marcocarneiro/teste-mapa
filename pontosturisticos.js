@@ -101,7 +101,7 @@ document
         apiGet("geoname", "name=" + name).then(function (data) {
             let message = "Name not found";
             if (data.status == "OK") {
-                message = data.name + ", " + getCountryName(data.country);
+                //message = data.name + ", " + getCountryName(data.country);
                 lon = data.lon;
                 lat = data.lat;
                 firstLoad();
