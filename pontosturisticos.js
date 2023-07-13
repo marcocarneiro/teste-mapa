@@ -94,7 +94,10 @@ let lon = 0;
 let lat = 0;
 let count = 0;
 
-document
+
+firstLoad();
+
+/* document
     .getElementById("search_form")
     .addEventListener("submit", function (event) {
         let name = document.getElementById("textbox").value;
@@ -116,4 +119,4 @@ document
     .addEventListener("click", function () {
         offset += pageLength;
         loadList();
-    });
+    }); */
