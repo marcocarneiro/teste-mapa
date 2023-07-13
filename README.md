@@ -11,7 +11,7 @@ Renderização de mapa com API tomtom e GPS do navegador - Apenas JS<br>
 https://developer.tomtom.com/
 
 ## turismo.html - API OpenTripMap 
-Esse exemplo utiliza a API TOMTOM para renderizar o mapa<br>
+Esse exemplo mostra lista de pontos turísticos e utiliza a API TOMTOM para renderizar o mapa<br>
 https://opentripmap.io/
 
 
