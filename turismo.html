@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class='use-all-space'>
+<head>
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+    <meta charset='UTF-8'>
+    <title>OpenTripMap e TOMTOM</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps.css'>
+    
+    <link rel='stylesheet' type='text/css' href='index.css'/>
+</head>
+<body>
+
+    <!-- FORMULÁRIO DE PESQUISA -->
+    <div class="container">
+        <form id="search_form" class="input-group mb-4 border p-1">
+            <div class="input-group-prepend border-0">
+                <button id="button-search" type="submit" class="btn btn-link ">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <input
+                id="textbox"
+                type="search"
+                placeholder="Região, cidade, etc. (exemplo: Paris)"
+                aria-describedby="button-search"
+                class="form-control bg-none border-0"
+            />
+        </form>
+    
+        <div id="info" class="alert alert-primary"></div>
+        <div class="row">
+            <div class="col-12 col-lg-5">
+                <div id="list" class="list-group"></div>
+                <nav class="text-center">
+                    <button id="next_button" type="button" class="btn btn-primary">
+                        Next
+                    </button>
+                </nav>
+            </div>
+            <div class="col-12 col-lg-7">
+                <div id="poi" class="alert"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAPA -->
+    <div class="parentMap">
+        <div id='map' class='map'></div>
+    </div>
+    
+
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js'></script>
+    <script type='text/javascript' src='mobile-or-tablet.js'></script>
+    <script type='text/javascript' src='rendermap.js'></script>
+    <script type='text/javascript' src='pontosturisticos.js'></script>
+
+</body>
+</html>
