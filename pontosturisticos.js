@@ -98,7 +98,8 @@ let campoBusca = document.getElementById('search_form');
 
 campoBusca.addEventListener('submit', function(event){
     let name = document.getElementById('textbox').value;
-    apiGet("geoname", "name=" + name).then(function (data) {
+    alert('Submit rolou!! ' + name)
+    /* apiGet("geoname", "name=" + name).then(function (data) {
         let message = "Name not found";
         if (data.status == "OK") {
             //message = data.name + ", " + getCountryName(data.country);
@@ -107,8 +108,8 @@ campoBusca.addEventListener('submit', function(event){
             firstLoad();
         }
         document.getElementById("info").innerHTML = `<p>${message}</p>`;
-    });
-    event.preventDefault();
+    }); 
+    event.preventDefault();*/
 });
 
 
