@@ -94,8 +94,23 @@ let lon = 0;
 let lat = 0;
 let count = 0;
 
+let campoBusca = document.getElementById('search_form');
 
-firstLoad();
+campoBusca.addEventListener('submit', function(event){
+    let name = document.getElementById('textbox').value;
+    apiGet("geoname", "name=" + name).then(function (data) {
+        let message = "Name not found";
+        if (data.status == "OK") {
+            //message = data.name + ", " + getCountryName(data.country);
+            lon = data.lon;
+            lat = data.lat;
+            firstLoad();
+        }
+        document.getElementById("info").innerHTML = `<p>${message}</p>`;
+    });
+    event.preventDefault();
+});
+
 
 /* document
     .getElementById("search_form")
