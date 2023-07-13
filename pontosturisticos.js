@@ -1,3 +1,37 @@
+//VARIÁVEIS 
+const apiKey = "5ae2e3f221c38a28845f05b650fa1262ccb4d33dab82a674a1797978";
+const pageLength = 5;
+
+let offset = 0;
+let lon = 0;
+let lat = 0;
+let count = 0;
+
+let campoBusca = document.getElementById('search_form');
+
+
+//EVENTOS
+campoBusca.addEventListener('submit', function(event){
+    let name = document.getElementById('textbox').value;
+    apiGet('geoname', 'name=' + name).then(function (data) {
+        if (data.status == "OK") {
+            //Renderiza mapa com o local digitado
+            lg = data.lon;
+            lt = data.lat;
+            renderMap = (lg, lt)
+            //
+            
+            console.log(data)
+        } 
+        
+        //document.getElementById("info").innerHTML = `<p>${message}</p>`;
+    });
+    event.preventDefault();
+});
+
+
+/* 
+
 // FUNÇÕES
 function apiGet(method, query) {
     return new Promise(function (resolve, reject) {
@@ -85,36 +119,9 @@ function firstLoad() {
 }
 
 
-//VARIÁVEIS 
-const apiKey = "5ae2e3f221c38a28845f05b650fa1262ccb4d33dab82a674a1797978";
-const pageLength = 5;
-
-let offset = 0;
-let lon = 0;
-let lat = 0;
-let count = 0;
-
-let campoBusca = document.getElementById('search_form');
 
 
-//eventos
-campoBusca.addEventListener('submit', function(event){
-    let name = document.getElementById('textbox').value;
-    apiGet("geoname", "name=" + name).then(function (data) {
-        /* let message = "Name not found";
-        if (data.status == "OK") {
-            lon = data.lon;
-            lat = data.lat;
-            firstLoad();
-        } */
-        console.log(data)
-        //document.getElementById("info").innerHTML = `<p>${message}</p>`;
-    });
-    event.preventDefault();
-});
-
-
-/* document
+document
     .getElementById("search_form")
     .addEventListener("submit", function (event) {
         let name = document.getElementById("textbox").value;
