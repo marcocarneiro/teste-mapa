@@ -9,6 +9,11 @@ let count = 0;
 
 let campoBusca = document.getElementById('search_form');
 
+//GEONAME
+//http://api.opentripmap.com/0.1/en/places/geoname?name=paris&country=fr&apikey=5ae2e3f221c38a28845f05b650fa1262ccb4d33dab82a674a1797978
+
+//LISTA DE LUGARES
+//http://api.opentripmap.com/0.1/en/places/bbox?lon_min=2.3488&lon_max=3.3488&lat_min=48.85341&lat_max=49.85341&format=json&apikey=5ae2e3f221c38a28845f05b650fa1262ccb4d33dab82a674a1797978
 
 //EVENTOS
 campoBusca.addEventListener('submit', function(event){
