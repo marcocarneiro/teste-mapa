@@ -23,7 +23,7 @@ campoBusca.addEventListener('submit', function(event){
         //document.getElementById("info").innerHTML = `<p>${message}</p>`;
     });
     event.preventDefault();
-    renderMap = (lon, lat)
+    renderMap(lon, lat)
 });
 
 
